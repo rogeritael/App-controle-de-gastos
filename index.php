@@ -11,12 +11,12 @@
 
     <section id="container-login">
         <a href="index.php"><i id="logo" class="fas fa-piggy-bank"></i></a>
-        <form id="form-login" action="">
+        <form id="form-login-cadastro" action="">
             <input class="input" type="text" name="usuario" placeholder="Digite seu usuario">
             <input class="input" type="password" name="senha" placeholder="Digite sua senha">
             <input class="input" type="button" value="Entrar">
         </form>
-        <p class="cadastro-txt"><a href="">Cadastrar</a></p>
+        <p class="cadastro-txt"><a href="cadastrar.php">Cadastrar</a></p>
     </section>
     
 </body>
