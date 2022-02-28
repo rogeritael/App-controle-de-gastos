@@ -1,0 +1,71 @@
+/* classes genéricas */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.input {
+    height: 35px;
+    margin: 5px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0.5px solid #CCC;
+    border-radius: 3px;
+    outline: none;
+}
+
+
+/* login */
+body {
+    background-color: #385FD6;
+    display: flex;
+    align-items: center;
+}
+
+#container-login {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 30px 10px 10px 10px;
+    height: 300px;
+    text-align: center;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: white;
+    -webkit-box-shadow: 5px 5px 36px -10px #000000; 
+    box-shadow: 5px 5px 36px -10px #000000;
+}
+
+.cadastro-txt {
+    align-self: end;
+    padding-right: 45px;
+}
+
+#logo {
+    font-size: 50px;
+    color: #769191;
+}
+
+#form-login{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+#form-login input[type="button"]{
+    background-color: #385FD6;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#form-login input[type="button"]:hover{
+    background-color: #456ee7;
+    /* color: #fff; */
+}
