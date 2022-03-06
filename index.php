@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Login Controle de gastos</title>
 </head>
-<body>
+<body class="body-login">
 
     <section id="container-login">
         <a href="index.php"><i id="logo" class="fas fa-piggy-bank"></i></a>
@@ -16,7 +16,7 @@
             <input class="input" type="password" name="senha" placeholder="Digite sua senha">
             <input class="input" type="button" value="Entrar">
         </form>
-        <p class="cadastro-txt"><a href="cadastrar.php">Cadastrar</a></p>
+        <p class="cadastro-txt"><a href="cadastro.php">Cadastrar</a></p>
     </section>
     
 </body>

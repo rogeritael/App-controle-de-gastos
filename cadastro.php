@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Cadastrar</title>
 </head>
-<body>
+<body class="body-login">
 
     <section id="container-login">
         <a href="index.php"><i id="logo" class="fas fa-piggy-bank"></i></a>
@@ -29,7 +29,7 @@
 
             <input class="input btn-cadastro" type="button" value="Cadastrar">
         </form>
-        <p class="cadastro-txt"><a href="index.php">Voltar</a></p>
+        <p class="cadastro-txt"><a class="voltar" href="index.php">Voltar</a></p>
     </section>
     
 </body>
