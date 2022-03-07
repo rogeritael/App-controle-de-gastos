@@ -107,7 +107,7 @@ body{
 /* painel */
 .painel-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e6e6e6;
     display: flex;
     /* height? */
@@ -121,6 +121,7 @@ aside.sidebar {
     height: 100vh;
     background-color: #fff;
     border-right: 1px solid #e6e6e6;
+    position: fixed;
 }
 
 .sidebar-header {
@@ -146,6 +147,12 @@ aside.sidebar {
 
 /* painel
         Projetos */
+
+.atual {
+    background-color: #e6e6e6;
+    border-right: 2px solid #609DF9;
+}
+
 .painel-container .projetos{
     width: 100%;
     height: calc(100% - 140px);
@@ -199,6 +206,7 @@ aside.sidebar {
 /* header */
 main.conteudo-principal {
     width: 100%;
+    margin-left: 250px;
 }
 
 .conteudo-principal header {
@@ -246,6 +254,7 @@ main.conteudo-principal {
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    transition: .5s;
 }
 
 .btn-container i.fa-trash {
@@ -258,6 +267,10 @@ main.conteudo-principal {
     border: 1px solid #747474;
 }
 
+.fa-trash:hover, .fa-pen:hover {
+    font-size: 14px;
+}
+
 .info-txt{
     width: 100%;
     padding-left: 30px;
@@ -268,4 +281,86 @@ main.conteudo-principal {
     display: inline-block;
     margin-bottom: 0;
     border-bottom: 3px solid #609DF9;
+}
+
+/* container card */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.card {
+    border-radius: 20px 20px 10px 10px;
+    width: 300px;
+    min-height: 400px;
+    background-color: #fff;
+    margin-top: 15px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #79A5E7;
+    border-radius: 20px 20px 0 0;
+    height: 50px;
+    padding: 10px 20px;
+}
+
+.card-header p{
+    color: #fff;
+    font-weight: bold;
+}
+
+.card-item {
+    padding: 10px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.card-item:last-child {
+    border-bottom: none;
+    padding-bottom: 40px;
+}
+
+.card-item h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-item p {
+    color: #a5a5a5;
+    font-size: 12px;
+}
+
+.card-controles {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-controles i {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.header-fazendo {
+    background-color: #E78079;
+}
+
+.header-feito {
+    background-color: #79E7A5;
+}
+
+.card-item i {
+    color: #BABABA;
+}
+
+/* btn hover */
+.sidebar-header i.fa-plus, div.btn-container input[type="button"] {
+    transition: .5s;
+}
+.sidebar-header i.fa-plus:hover, div.btn-container input[type="button"]:hover {
+    background-color: #749ad3;
 }

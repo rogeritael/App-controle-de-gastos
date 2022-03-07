@@ -57,6 +57,170 @@
                     <h3>Quadro</h3>
                 </div>
             </header>
+
+            <section class="card-container">
+
+                    <!-- card -->
+                    <div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p>Fazer</p>
+                            <p>22/45</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+
+
+
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- fim card -->
+
+                    <!-- card -->
+                    <div>
+                    <div class="card">
+                        <div class="card-header  header-fazendo">
+                            <p>Fazendo</p>
+                            <p>8/45</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+
+
+
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <h2>Criar header</h2>
+                                <p>A expressão Lorem ipsum em design gráfico e 
+                                    editoração é um texto padrão em latim utilizado na 
+                                    produção gráfica para preencher os espaços de texto 
+                                    em publicações para
+                                </p>
+                                <div class="card-controles">
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    <!-- fim card -->
+
+                    <!-- card -->
+                    <div>
+                        <div class="card">
+                            <div class="card-header  header-feito">
+                                <p>Feito</p>
+                                <p>15/45</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-item">
+                                    <h2>Criar header</h2>
+                                    <p>A expressão Lorem ipsum em design gráfico e 
+                                        editoração é um texto padrão em latim utilizado na 
+                                        produção gráfica para preencher os espaços de texto 
+                                        em publicações para
+                                    </p>
+                                    <div class="card-controles">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="card-item">
+                                    <h2>Criar header</h2>
+                                    <p>A expressão Lorem ipsum em design gráfico e 
+                                        editoração é um texto padrão em latim utilizado na 
+                                        produção gráfica para preencher os espaços de texto 
+                                        em publicações para
+                                    </p>
+                                    <div class="card-controles">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fim card -->
+        
+                </section>
         </main>
     </div>
 </body>
