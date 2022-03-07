@@ -39,6 +39,25 @@
                 <i class="fas fa-sign-out-alt"></i>
             </div>
         </aside>
+
+        <main class="conteudo-principal">
+            <header>
+                <div class="info-container">
+                    <div class="info-projeto">
+                        <h2>Site empresa de importação</h2>
+                        <p>15 de 45</p>
+                    </div>
+                    <div class="btn-container">
+                        <i class="fas fa-pen"></i>
+                        <i class="fas fa-trash"></i>
+                        <input type="button" value="adicionar tarefa">
+                    </div>
+                </div>
+                <div class="info-txt">
+                    <h3>Quadro</h3>
+                </div>
+            </header>
+        </main>
     </div>
 </body>
 </html>
