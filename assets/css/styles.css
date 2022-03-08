@@ -460,3 +460,38 @@ form#cadastro-projeto {
 form#cadastro-projeto .btn-form-container {
     width: 300px;
 }
+
+
+
+
+
+/* Mobile */
+@media screen and (max-width: 912px){
+    .painel-container {
+        position: relative;
+    }
+
+    aside.sidebar {
+        position: absolute;
+        left: -300px;
+    }
+
+    main.conteudo-principal {
+        margin-left: 0;
+
+    }
+
+    .novatarefa-container {
+        width: 100%;
+        height: calc(100% - 160px);
+    }
+
+    .novatarefa-container div.form-header{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .novatarefa-container div.form-header input, .novatarefa-container div.form-header select {
+        width: 100%;
+    }
+}
