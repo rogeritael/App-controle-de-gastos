@@ -445,3 +445,18 @@ main.conteudo-principal {
     border-radius: 3px;
     border-bottom: 2px solid #609DF9;
 }
+
+/* cadastrar projeto */
+form#cadastro-projeto {
+    width: 300px;
+    position: relative;
+}
+
+.input-cadastro{
+    width: 300px;
+    height: 40px;
+}
+
+form#cadastro-projeto .btn-form-container {
+    width: 300px;
+}
