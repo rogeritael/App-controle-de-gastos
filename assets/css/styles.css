@@ -364,3 +364,84 @@ main.conteudo-principal {
 .sidebar-header i.fa-plus:hover, div.btn-container input[type="button"]:hover {
     background-color: #749ad3;
 }
+
+
+/* nova tarefa */
+.novatarefa-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 120px);
+}
+
+.novatarefa-container form{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+}
+
+.novatarefa-container form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.novatarefa-container form .form-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.novatarefa-container form .form-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header div input, .form-header div select {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.form-header div input {
+    margin-right: 10px;
+}
+
+.novatarefa-container form textarea {
+    width: 510px;
+    height: 200px;
+    resize: none;
+    padding: 10px;
+}
+
+.btn-form-container {
+    width: 510px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-form-container i{
+    font-size: 20px;
+    padding: 10px 15px;
+    align-items: center;
+    color: #fff;
+    margin:10px 10px 0 0;
+    border-radius: 3px;
+    background-color: #609DF9;
+    cursor: pointer;
+}
+
+.btn-form-container input {
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #609DF9;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.novatarefa-container form input,.novatarefa-container form select, .novatarefa-container form textarea {
+    border-radius: 3px;
+    border-bottom: 2px solid #609DF9;
+}
