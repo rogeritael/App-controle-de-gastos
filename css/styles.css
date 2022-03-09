@@ -1,0 +1,87 @@
+/*=============== 
+ Reset
+===============*/
+* {
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #747474;
+    list-style: none;
+    outline: none;
+    /* border: none; */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*=============== 
+ Sidebar
+===============*/
+aside.sidebar {
+    width: 250px;
+    height: 100vh;
+    border-left: 1px solid #E6E6E6;
+    border: 1px solid red;
+}
+
+/* header */
+.aside-header {
+    min-height: 80px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.aside-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.aside-title-container i {
+    background-color: #609DF9;
+    padding: 10px;
+    font-size: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.new-project-form {
+    width: 90%;
+    height: 50px;
+    padding-top: 10px;
+    position: relative;
+    margin: 0 auto;
+    display: none;
+}
+
+.new-project-form input,.new-project-form button {
+    height: 35px;
+    margin: 0;
+}
+
+.new-project-form input[type="text"]{
+    width: calc(100% - 35px);
+    border: 1px solid #E6E6E6;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+}
+
+.new-project-form input[type="text"]::placeholder {
+    color: #BABABA;
+}
+
+.new-project-form button[type="submit"]{
+    width: 35px;
+    text-align: center;
+    margin-left: -5px;
+    background-color: #609DF9;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    top: 10;
+}
+
+.new-project-form button[type="submit"] i {
+    color: #fff;
+}
