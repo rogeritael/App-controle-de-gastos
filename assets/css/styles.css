@@ -238,6 +238,13 @@ main.conteudo-principal {
     border-radius: 5px;
 }
 
+.info-projeto i.fa-bars {
+    font-size: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    display: none;
+}
+
 .info-projeto h2 {
     font-size: 20px;
 }
@@ -493,5 +500,9 @@ form#cadastro-projeto .btn-form-container {
 
     .novatarefa-container div.form-header input, .novatarefa-container div.form-header select {
         width: 100%;
+    }
+
+    .info-projeto i.fa-bars {
+        display: block;
     }
 }

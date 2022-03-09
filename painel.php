@@ -44,6 +44,7 @@
             <header>
                 <div class="info-container">
                     <div class="info-projeto">
+                        <i class="fas fa-bars"></i>
                         <h2>Site empresa de importação</h2>
                         <p>15 de 45</p>
                     </div>
