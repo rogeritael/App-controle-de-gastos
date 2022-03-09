@@ -1,3 +1,11 @@
+/* !!!!!!!!!!!!!!!!!!! 
+resetar o padding top do .aside-header no responsivo para caber o form da forma correta
+
+*/
+
+
+
+
 /*=============== 
  Reset
 ===============*/
@@ -21,14 +29,16 @@
 aside.sidebar {
     width: 250px;
     height: 100vh;
-    border-left: 1px solid #E6E6E6;
-    border: 1px solid red;
+    border-right: 1px solid #E6E6E6;
+    position: fixed;
+    /* border: 1px solid red; */
 }
 
 /* header */
 .aside-header {
     min-height: 80px;
     border-bottom: 1px solid #E6E6E6;
+    padding-top: 15px;
 }
 
 .aside-title-container {
@@ -84,4 +94,53 @@ aside.sidebar {
 
 .new-project-form button[type="submit"] i {
     color: #fff;
+}
+
+/* body */
+.current {
+    background-color: #E6E6E6;
+    border-right: 3px solid #609DF9;
+}
+
+.aside-body {
+    height: calc(100vh - 120px);
+    padding-top: 25px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #BABABA;
+    border-radius: 3px;
+}
+
+.project-item {
+    cursor: pointer;
+    transition: .3s;
+    padding: 10px 10px 10px 30px;
+    font-size: 16px;
+}
+
+.project-item:hover {
+    background-color: #F3F1F1;
+}
+
+.project-item h3 {
+    font-size: 16px;
+}
+
+.project-item p {
+    font-size: 12px;
+    color: #BABABA;
+}
+
+/* footer */
+.aside-footer{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

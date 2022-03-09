@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
 
+        <aside class="sidebar">
             <!-- sidebar header -->
             <div class="aside-header">
                 <div class="aside-title-container">
@@ -30,13 +30,30 @@
             </div>
             <!-- /sidebar header -->
 
-
+            <!-- sidebar body -->
             <div class="aside-body">
-                
+                <ul>
+                    <li class="project-item">
+                        <h3>UI/UX Design</h3>
+                        <p>8 de 12 tarefas</p>
+                    </li>
+                    <li  class="current project-item">
+                        <h3>site empresa de importação</h3>
+                        <p>15 de 45 tarefas</p>
+                    </li>
+                    <li class="project-item">
+                        <h3>projeto da BRF</h3>
+                        <p>17 de 24 tarefas</p>
+                    </li>
+                </ul>
             </div>
-            <div class="aside-footer">
+            <!-- /sidebar body -->
 
+            <!-- sidebar footer -->
+            <div class="aside-footer">
+                <a href=""><p>Sair <i class="fas fa-sign-out-alt"></i></p></a>
             </div>
+            <!-- /sidebar footer -->
         </aside>
         
 
