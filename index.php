@@ -13,6 +13,9 @@
 <body>
     <div class="container">
 
+        <!-- 
+            SIDEBAR
+         -->
         <aside class="sidebar">
             <!-- sidebar header -->
             <div class="aside-header">
@@ -55,8 +58,29 @@
             </div>
             <!-- /sidebar footer -->
         </aside>
-        
+       
 
+        <!-- 
+            MAIN
+         -->
+        <section class="main-content">
+            <header class="main-header">
+                <i class="fas fa-bars"></i>
+                <div class="project-info">
+                    <div class="text-container">
+                        <h2>Site empresa de importação</h2>
+                        <p>15 de 45</p>
+                    </div>
+                    <div class="btn-container">
+                        <i class="fas fa-pen"></i>
+                        <i class="fas fa-trash"></i>
+                        <input type="button" value="adicionar tarefa">
+                    </div>
+                </div>
+                <h2 class="text-detail">Quadro</h2>
+            </header>
+
+        </section>
 
     </div>    
 </body>
