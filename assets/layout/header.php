@@ -1,3 +1,7 @@
+<?php
+    require 'kanban.controller.php';
+?>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
