@@ -90,7 +90,7 @@
                     <!-- card -->
                     <div class="card">
                         <div class="card-header">
-                            <p><i class="fas fa-exclamation-circle"></i>Fazer </p>
+                            <p><i class="fas fa-thumbtack"></i>Fazer </p>
                             <p>22/45</p>
                         </div>
                         <div class="card-body">
@@ -168,7 +168,7 @@
                     <!-- card -->
                     <div class="card">
                         <div class="card-header">
-                            <p><i class="fas fa-clock"></i></i>Fazer </p>
+                            <p><i class="fas fa-clock"></i></i>Em andamento </p>
                             <p>22/45</p>
                         </div>
                         <div class="card-body">
@@ -221,7 +221,7 @@
                 <!-- card -->
                     <div class="card">
                         <div class="card-header">
-                            <p><i class="fas fa-thumbtack"></i>Fazer </p>
+                            <p><i class="fas fa-check-circle"></i>Concluído </p>
                             <p>22/45</p>
                         </div>
                         <div class="card-body">

@@ -2,7 +2,6 @@
 resetar o padding top do .aside-header no responsivo para caber o form da forma correta
 main.main-content para 0 no margin-left
 
-<i class="fas fa-check-circle"></i>
 */
 
 /*=============== 
@@ -148,6 +147,10 @@ aside.sidebar {
     justify-content: center;
 }
 
+.aside-footer p, .aside-footer i {
+    font-weight: bold;
+}
+
 
 
 /*=============== 
@@ -237,7 +240,7 @@ section.cards-container{
 }
 
 .card-header i{
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .card-body{
