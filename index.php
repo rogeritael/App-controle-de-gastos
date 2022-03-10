@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css">
+    <script src="assets/js/App.js" defer></script>
     <title>Kanban Board</title>
 </head>
 <body>
@@ -65,9 +66,11 @@
          -->
         <section class="main-content">
 
+            <div class="hidden-menu" onclick="esconderMenu()"></div>
+
             <!-- header -->
             <header class="main-header">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" onclick="abrirMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
                         <h2>Site empresa de importação</h2>
@@ -87,7 +90,7 @@
             <main class="workspace-container">
                 <section class="cards-container">
 
-                    <!-- card -->
+                    <!-- card fazer -->
                     <div class="card">
                         <div class="card-header">
                             <p><i class="fas fa-thumbtack"></i>Fazer </p>
@@ -163,13 +166,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /card -->
+                    <!-- /card fazer-->
 
-                    <!-- card -->
+                    <!-- card em andamento -->
                     <div class="card">
                         <div class="card-header">
                             <p><i class="fas fa-clock"></i></i>Em andamento </p>
-                            <p>22/45</p>
+                            <p>8/45</p>
                         </div>
                         <div class="card-body">
                             <div class="card-item">
@@ -180,9 +183,7 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
-                                    <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
+                                    <i class="fas fa-check"></i>
                                 </div>
                             </div>
 
@@ -195,9 +196,7 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
-                                    <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
+                                    <i class="fas fa-check"></i>
                                 </div>
                             </div>
                             <div class="card-item">
@@ -208,21 +207,19 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
-                                    <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
+                                    <i class="fas fa-check"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /card -->
+                    <!-- /card em andamento-->
 
 
-                <!-- card -->
+                <!-- card conluído -->
                     <div class="card">
                         <div class="card-header">
                             <p><i class="fas fa-check-circle"></i>Concluído </p>
-                            <p>22/45</p>
+                            <p>15/45</p>
                         </div>
                         <div class="card-body">
                             <div class="card-item">
@@ -233,9 +230,7 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
                                     <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
                                 </div>
                             </div>
 
@@ -248,9 +243,7 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
                                     <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
                                 </div>
                             </div>
                             <div class="card-item">
@@ -261,9 +254,7 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
                                     <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
                                 </div>
                             </div>
                             <div class="card-item">
@@ -274,14 +265,12 @@
                                     em publicações para
                                 </p>
                                 <div class="card-controls">
-                                    <i class="fas fa-edit"></i>
                                     <i class="fas fa-trash-alt"></i>
-                                    <i class="fas fa-chevron-right"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /card -->
+                    <!-- /card concluído -->
 
                     
                 
