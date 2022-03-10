@@ -2,7 +2,7 @@
 resetar o padding top do .aside-header no responsivo para caber o form da forma correta
 main.main-content para 0 no margin-left
 
-
+<i class="fas fa-check-circle"></i>
 */
 
 /*=============== 
@@ -23,7 +23,7 @@ main.main-content para 0 no margin-left
 div.container {
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /*=============== 
@@ -153,6 +153,8 @@ aside.sidebar {
 /*=============== 
  Main
 ===============*/
+
+/* header */
 section.main-content {
     width: calc(100vw - 250px);
     margin-left: 250px;
@@ -177,6 +179,7 @@ header.main-header {
     font-size: 20px;
     margin-top: 10px;
     margin-left: 30px;
+    display: none;
 }
 
 .project-info {
@@ -201,7 +204,77 @@ header.main-header {
 }
 
 
+/* body */
+main.workspace-container {
+    padding: 20px;
+}
 
+section.cards-container{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* card */
+.card {
+    width: 300px;
+    margin: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #609DF9;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-header p, .card-header i {
+    color: #fff;
+}
+
+.card-header i{
+    margin-right: 5px;
+}
+
+.card-body{
+    /* border: 1px solid #609DF9; */
+    background-color: #fff;
+    padding: 10px;
+
+}
+
+.card-item{
+    border-bottom: 1px solid #E6E6E6;
+    padding: 10px 0;
+}
+
+.card-item:last-child{
+    border-bottom: none;
+}
+
+.card-item h2{
+    font-size: 16px;
+}
+
+.card-item p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #BABABA;
+}
+
+.card-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-controls i {
+    margin-right: 15px;
+}
 
 
 
@@ -220,6 +293,10 @@ header.main-header {
     aside.sidebar {
         position: absolute;
         left: -250px;
+    }
+
+    .main-header i.fa-bars{
+        display: block;
     }
 
     section.main-content {
