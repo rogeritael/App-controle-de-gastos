@@ -66,11 +66,11 @@
          -->
         <section class="main-content">
 
-            <div class="hidden-menu" onclick="esconderMenu()"></div>
+            <div class="hidden-menu" onclick="hideMenu()"></div>
 
             <!-- header -->
             <header class="main-header">
-                <i class="fas fa-bars" onclick="abrirMenu()"></i>
+                <i class="fas fa-bars" onclick="showMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
                         <h2>Site empresa de importação</h2>

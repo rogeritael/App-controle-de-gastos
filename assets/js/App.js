@@ -1,4 +1,4 @@
-function abrirMenu(){
+function showMenu(){
     let menu = document.querySelector('aside.sidebar');
     menu.style.left = 0;
 
@@ -6,7 +6,7 @@ function abrirMenu(){
     menuBackground.style.display = 'block';
 }
 
-function esconderMenu(){
+function hideMenu(){
     let menu = document.querySelector('aside.sidebar');
     menu.style.left = -250;
 
