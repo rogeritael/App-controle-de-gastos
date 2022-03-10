@@ -279,10 +279,8 @@ section.cards-container{
     margin-right: 15px;
 }
 
-/* testes */
 div.hidden-menu{
     width: 100vw;
-    /* calc(100vw - 250px) */
     height: 100vh;
     position: absolute;
     background-color: black;
@@ -292,10 +290,6 @@ div.hidden-menu{
     cursor: pointer;
     display: none;
 }
-
-
-
-
 
 
 
