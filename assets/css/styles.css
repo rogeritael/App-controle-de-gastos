@@ -194,6 +194,7 @@ header.main-header {
 
 .btn-container i{
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .btn-container input[type="button"]{

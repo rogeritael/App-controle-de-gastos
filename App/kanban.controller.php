@@ -85,5 +85,21 @@
 
             header('location: index.php');
         }
+
+        //deleta a tarefa
+        if($_GET['action'] == 'deletetask'){
+            $id = $_GET['id'];
+
+            $db = new Db();
+            $task = new Task();
+
+            $task->__set('db', $db->connect());
+            $task->__set('taskId', $id);
+
+            $task->delete();
+
+            header('location: index.php');
+
+        }
     }
 ?>
