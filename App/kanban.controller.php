@@ -1,15 +1,42 @@
 <?php
     require "App/db/db.php";
-    // require "db/project.model.php";
+    require "App/models/project.model.php";
     require "App/models/task.model.php";
     // require "db/user.model.php";
 
+    // recupera os projetos do usuário
     $db = new Db();
-    $task = new Task();
+    $projects = new Project();
 
-    $task->__set('db', $db->connect());
-    $task->__set('taskId', 4);
-    $task->__set('taskDescription', 'descrição modificada através do php');
+    $projects->__set('db', $db->connect());
+    $projArray = $projects->read();
 
-    $task->update('description');
+    // recupera as tarefas do projeto selecionado
+    foreach($projArray as $project){
+        if($project['project_status'] == 1){
+            $task = new Task();
+            $task->__set('projectId', $project['project_id']);
+            $task->__set('db', $db->connect());
+            $tasks = $task->read();
+        }
+    }
+
+
+
+    if(isset($_GET['action'])){
+        // marca o projeto como selecionado para recuperar as tarefas
+        if($_GET['action'] == 'selectProject'){
+            $id = $_GET['id'];
+            $db = new Db();
+            $project = new Project();
+
+            $project->__set('project_id', $id);
+            $project->__set('user_id', 1);
+            $project->__set('db', $db->connect());
+
+            $project->selectProject();
+
+            header('location: index.php');
+        }
+    }
 ?>

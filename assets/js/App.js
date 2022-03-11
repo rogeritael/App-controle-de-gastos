@@ -13,3 +13,12 @@ function hideMenu(){
     let menuBackground = document.querySelector('div.hidden-menu');
     menuBackground.style.display = 'none';
 }
+
+function markCurrent(){
+    // let liGroup = document.querySelector('li.project-item');
+    alert('ois');
+}
+
+function oi(){
+    alert('okay');
+}

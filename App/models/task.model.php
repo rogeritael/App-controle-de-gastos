@@ -28,7 +28,7 @@
         }
 
         public function read(){
-            $sql = "SELECT task_id, task_name, task_description FROM tasks WHERE fk_project_id = $this->projectId";
+            $sql = "SELECT task_id, task_name, task_description, task_status FROM tasks WHERE fk_project_id = $this->projectId";
             $stmt = $this->db->prepare($sql);
             $stmt->execute();
             
@@ -46,7 +46,5 @@
             $stmt = $this->db->prepare($sql);
             $stmt->execute();
         }
-
-
     }
 ?>

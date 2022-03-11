@@ -1,5 +1,6 @@
 <?php
     require 'kanban.controller.php';
+
 ?>
 
 <html lang="pt-br">
@@ -12,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/App.js" defer></script>
+    <!-- <script src="assets/js/App.js" defer></script> -->
     <title>Kanban Board</title>
 </head>
 <body>
@@ -41,18 +42,19 @@
             <!-- sidebar body -->
             <div class="aside-body">
                 <ul>
-                    <li class="project-item">
-                        <h3>UI/UX Design</h3>
-                        <p>8 de 12 tarefas</p>
-                    </li>
-                    <li  class="current project-item">
-                        <h3>site empresa de importação</h3>
-                        <p>15 de 45 tarefas</p>
-                    </li>
-                    <li class="project-item">
-                        <h3>projeto da BRF</h3>
-                        <p>17 de 24 tarefas</p>
-                    </li>
+                    <?php
+                        foreach($projArray as $project){
+                            $status = $project['project_status'];
+                    ?>        
+                        <a href="kanban.controller.php?action=selectProject&id=<?php echo $project['project_id'];?>">
+                            <li class="project-item
+                                <?php if($status == 1){ echo 'current';} ?>
+                            ">
+                                <h3><?php echo $project['project_name']; ?></h3>
+                                <p>17 de 24 tarefas</p>
+                            </li>
+                        </a>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- /sidebar body -->

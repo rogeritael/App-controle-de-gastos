@@ -4,28 +4,19 @@
 
     <!-- card fazer -->
     <div class="card">
+
+        
         <div class="card-header">
             <p><i class="fas fa-thumbtack"></i>Fazer </p>
             <p>22/45</p>
         </div>
         <div class="card-body">
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
 
-            <!-- teste -->
+        <?php foreach($tasks as $task){ 
+            if($task['task_status'] == 1){
+        ?>
             <div class="card-item">
-                <h2>Criar header</h2>
+                <h2><?php echo $task['task_name'] ?></h2>
                 <p>A expressão Lorem ipsum em design gráfico e 
                     editoração é um texto padrão em latim utilizado na 
                     produção gráfica para preencher os espaços de texto 
@@ -37,105 +28,52 @@
                     <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
+        <?php } } ?>
+            
         </div>
     </div>
     <!-- /card fazer-->
 
     <!-- card em andamento -->
+    
     <div class="card">
         <div class="card-header">
             <p><i class="fas fa-clock"></i></i>Em andamento </p>
             <p>8/45</p>
         </div>
         <div class="card-body">
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-check"></i>
+            <?php foreach($tasks as $task){ 
+                if($task['task_status'] == 2){
+            ?>
+                <div class="card-item">
+                    <h2>Criar header</h2>
+                    <p>A expressão Lorem ipsum em design gráfico e 
+                        editoração é um texto padrão em latim utilizado na 
+                        produção gráfica para preencher os espaços de texto 
+                        em publicações para
+                    </p>
+                    <div class="card-controls">
+                        <i class="fas fa-check"></i>
+                    </div>
                 </div>
-            </div>
-
-            <!-- teste -->
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-check"></i>
-                </div>
-            </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-check"></i>
-                </div>
-            </div>
+            <?php } } ?>
         </div>
     </div>
     <!-- /card em andamento-->
 
 
-        <!-- card conluído -->
+    <!-- card conluído -->
     <div class="card">
         <div class="card-header">
             <p><i class="fas fa-check-circle"></i>Concluído </p>
             <p>15/45</p>
         </div>
         <div class="card-body">
+            <?php foreach($tasks as $task){ 
+                if($task['task_status'] == 3){
+            ?>
             <div class="card-item">
-                <h2>Criar header</h2>
+                <h2><?php echo $task['task_name']?></h2>
                 <p>A expressão Lorem ipsum em design gráfico e 
                     editoração é um texto padrão em latim utilizado na 
                     produção gráfica para preencher os espaços de texto 
@@ -145,41 +83,9 @@
                     <i class="fas fa-trash-alt"></i>
                 </div>
             </div>
+            <?php } } ?>
 
-            <!-- teste -->
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-            </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-            </div>
-            <div class="card-item">
-                <h2>Criar header</h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
-                </p>
-                <div class="card-controls">
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-            </div>
+            
         </div>
     </div>
     <!-- /card concluído -->
