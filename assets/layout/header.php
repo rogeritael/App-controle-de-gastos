@@ -76,10 +76,19 @@
 
             <!-- header -->
             <header class="main-header">
+                <?php
+                    foreach($projArray as $project){
+                        if($project['project_status'] == 1){
+                            $pName = $project['project_name'];
+                            $pId = $project['project_id'];
+                        }
+                    }
+                ?>
+
                 <i class="fas fa-bars" onclick="showMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
-                        <h2>Site empresa de importação</h2>
+                        <h2><?php echo $pName?></h2>
                         <p>15 de 45</p>
                     </div>
                     <div class="btn-container">
