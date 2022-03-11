@@ -19,6 +19,7 @@ function markCurrent(){
     alert('ois');
 }
 
-function oi(){
-    alert('okay');
+function addProject(){
+    let form = document.querySelector('.new-project-form'); 
+    form.style.display = 'block'
 }

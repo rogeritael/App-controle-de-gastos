@@ -38,5 +38,18 @@
 
             header('location: index.php');
         }
+
+        if($_GET['action'] == 'newProject'){
+            $projectName = $_POST['projectName'];
+            $db = new Db();
+
+            $project = new Project();
+            $project->__set('db', $db->connect());
+            $project->__set('user_id', 1);
+            $project->__set('project_name', $projectName);
+
+            $project->newProject();
+            header('location: index.php');
+        }
     }
 ?>

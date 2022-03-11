@@ -28,5 +28,13 @@
             $stmt = $this->db->prepare($sql);
             $stmt->execute();
         }
+
+        public function newProject(){
+            $sql = "INSERT INTO projects(project_name, fk_user_id) VALUES(:pname, :puser)";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':pname', $this->project_name);
+            $stmt->bindValue(':puser', $this->user_id);
+            $stmt->execute();
+        }
     }
 ?>
