@@ -292,6 +292,31 @@ div.hidden-menu{
 }
 
 
+/* botao de edição do título do projeto */
+.editProjectInput, .editProjectButton{
+    margin-top: 10px;
+    height: 40px;
+}
+
+.editProjectInput{
+    width: 250px;
+    padding-left: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #E6E6E6;
+}
+
+.editProjectInput::placeholder {
+    color: #BABABA;
+}
+
+.editProjectButton {
+    width: 40px;
+    background-color: #609DF9;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
 
 
 

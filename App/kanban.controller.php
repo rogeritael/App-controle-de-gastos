@@ -39,6 +39,7 @@
             header('location: index.php');
         }
 
+        //cria um novo projeto
         if($_GET['action'] == 'newProject'){
             $projectName = $_POST['projectName'];
             $db = new Db();
@@ -49,6 +50,39 @@
             $project->__set('project_name', $projectName);
 
             $project->newProject();
+            header('location: index.php');
+        }
+
+        //exclui um projeto
+        if($_GET['action'] == 'deleteProject'){
+            $id = $_GET['id'];
+
+            $db = new Db();
+            $project = new Project();
+
+            $project->__set('db', $db->connect());
+            $project->__set('project_id', $id);
+            $project->__set('user_id', 1);
+            
+            $project->delete();
+            
+            header('location: index.php');
+        }
+
+        //edita o nome do projeto
+        if($_GET['action'] == 'editprojectname'){
+            $id = $_GET['id'];
+
+            $db = new Db();
+            $project = new Project();
+
+            $project->__set('db', $db->connect());
+            $project->__set('user_id', 1);
+            $project->__set('project_name', $_POST['name']);
+            $project->__set('project_id', $id);
+
+            $project->editName();
+
             header('location: index.php');
         }
     }

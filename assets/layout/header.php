@@ -27,7 +27,7 @@
             <div class="aside-header">
                 <div class="aside-title-container">
                     <h2>Projetos</h2>
-                    <i class="fas fa-plus" onclick="addProject()"></i>
+                    <i class="fas fa-plus btn-add" onclick="addProjectForm()"></i>
                 </div>
 
                 <div class="new-project-form">
@@ -92,8 +92,8 @@
                         <p>15 de 45</p>
                     </div>
                     <div class="btn-container">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
+                        <a href="kanban.controller.php?action=deleteProject&id=<?php echo $pId;?>"><i class="fas fa-trash"></i></a>
                         <input type="button" value="adicionar tarefa">
                     </div>
                 </div>
