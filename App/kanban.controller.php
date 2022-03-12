@@ -21,6 +21,24 @@
         }
     }
 
+    //recupera o numero de tarefas em cada categoria e o total delas
+    $count1 = 0;
+    $count2 = 0;
+    $count3 = 0;
+    
+    foreach($tasks as $taskCount){
+        if($taskCount['task_status'] == 3){
+            $count3++;
+        }elseif($taskCount['task_status'] == 2){
+            $count2++;
+        }elseif($taskCount['task_status'] == 1){
+            $count1++;
+        }
+    }
+    $countTotal = $count1 + $count2 + $count3;
+    // echo $count1, $count2, $count3,  $countTotal;
+
+
 
     if(isset($_GET['action'])){
         // marca o projeto como selecionado para recuperar as tarefas

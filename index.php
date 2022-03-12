@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-header">
                 <p><i class="fas fa-thumbtack"></i>Fazer </p>
-                <p>22/45</p>
+                <p><?php echo $count1 ?> / <?php echo $countTotal ?></p>
             </div>
             <div class="card-body">
 
@@ -45,7 +45,7 @@
         <div class="card">
             <div class="card-header">
                 <p><i class="fas fa-clock"></i></i>Em andamento </p>
-                <p>8/45</p>
+                <p><?php echo $count2 ?> / <?php echo $countTotal ?></p>
             </div>
             <div class="card-body">
                 <?php foreach($tasks as $task){ 
@@ -72,12 +72,12 @@
 
     <!-- card conluído -->
     <?php foreach($tasks as $taskVerify){
-        if($taskVerify['task_status'] == 2){
+        if($taskVerify['task_status'] == 3){
     ?>
     <div class="card">
         <div class="card-header">
             <p><i class="fas fa-check-circle"></i>Concluído </p>
-            <p>15/45</p>
+            <p><?php echo $count3 ?> / <?php echo $countTotal ?></p>
         </div>
         <div class="card-body">
             <?php foreach($tasks as $task){ 

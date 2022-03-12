@@ -89,7 +89,7 @@
                 <div class="project-info">
                     <div class="text-container">
                         <h2><?php echo $pName?></h2>
-                        <p>15 de 45</p>
+                        <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
                     </div>
                     <div class="btn-container">
                         <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
