@@ -1,3 +1,8 @@
+<?php
+    require 'kanban.controller.php';
+
+?>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -22,12 +27,12 @@
             <div class="aside-header">
                 <div class="aside-title-container">
                     <h2>Projetos</h2>
-                    <a href=""><i class="fas fa-plus"></i></a>
+                    <i class="fas fa-plus btn-add" onclick="addProjectForm()"></i>
                 </div>
 
                 <div class="new-project-form">
-                    <form action="teste.php">
-                        <input type="text" name="" id="" placeholder="Nome do projeto">
+                    <form action="kanban.controller.php?action=newProject" method="post">
+                        <input type="text" name="projectName" id="" placeholder="Nome do projeto">
                         <button type="submit"><i class="fas fa-chevron-right"></i></button>
                     </form>
                 </div>
@@ -37,18 +42,19 @@
             <!-- sidebar body -->
             <div class="aside-body">
                 <ul>
-                    <li class="project-item">
-                        <h3>UI/UX Design</h3>
-                        <p>8 de 12 tarefas</p>
-                    </li>
-                    <li  class="current project-item">
-                        <h3>site empresa de importação</h3>
-                        <p>15 de 45 tarefas</p>
-                    </li>
-                    <li class="project-item">
-                        <h3>projeto da BRF</h3>
-                        <p>17 de 24 tarefas</p>
-                    </li>
+                    <?php
+                        foreach($projArray as $project){
+                            $status = $project['project_status'];
+                    ?>        
+                        <a href="kanban.controller.php?action=selectProject&id=<?php echo $project['project_id'];?>">
+                            <li class="project-item
+                                <?php if($status == 1){ echo 'current';} ?>
+                            ">
+                                <h3><?php echo $project['project_name']; ?></h3>
+                                <p>17 de 24 tarefas</p>
+                            </li>
+                        </a>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- /sidebar body -->
@@ -70,15 +76,24 @@
 
             <!-- header -->
             <header class="main-header">
+                <?php
+                    foreach($projArray as $project){
+                        if($project['project_status'] == 1){
+                            $pName = $project['project_name'];
+                            $pId = $project['project_id'];
+                        }
+                    }
+                ?>
+
                 <i class="fas fa-bars" onclick="showMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
-                        <h2>Site empresa de importação</h2>
-                        <p>15 de 45</p>
+                        <h2><?php echo $pName?></h2>
+                        <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
                     </div>
                     <div class="btn-container">
-                        <i class="fas fa-pen"></i>
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
+                        <a href="kanban.controller.php?action=deleteProject&id=<?php echo $pId;?>"><i class="fas fa-trash"></i></a>
                         <input type="button" value="adicionar tarefa">
                     </div>
                 </div>

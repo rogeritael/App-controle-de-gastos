@@ -8,7 +8,7 @@
         public function connect(){
             try {
                 $connection = new PDO(
-                    "mysql:host=$this->host;db_name=$this->db_name",
+                    "mysql:host=$this->host;dbname=$this->db_name",
                     "$this->user",
                     "$this->pass"
                 );
@@ -21,7 +21,5 @@
             }
         }
     }
-
-
 
 ?>
