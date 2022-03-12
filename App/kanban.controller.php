@@ -22,7 +22,6 @@
     }
 
 
-
     if(isset($_GET['action'])){
         // marca o projeto como selecionado para recuperar as tarefas
         if($_GET['action'] == 'selectProject'){
@@ -117,7 +116,6 @@
             $task->update('status');
 
             header('location: index.php');
-
         }
 
         //marca a tarefa como concluída
