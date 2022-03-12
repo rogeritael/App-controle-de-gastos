@@ -25,7 +25,7 @@
                 <div class="card-controls">
                     <i class="fas fa-edit"></i>
                     <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>                    
-                    <a href="kanban.controller.php?action=moveto2&id=<?php echo $task['task_id']; ?>"><i class="fas fa-chevron-right"></i></a>                    
+                    <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=2"><i class="fas fa-chevron-right"></i></a>                    
                     
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         em publicações para
                     </p>
                     <div class="card-controls">
-                    <a href="kanban.controller.php?action=markasdone&id=<?php echo $task['task_id']; ?>"><i class="fas fa-check"></i></a> 
+                    <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=3"><i class="fas fa-check"></i></a> 
                         
                     </div>
                 </div>

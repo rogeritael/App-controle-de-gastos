@@ -4,6 +4,7 @@
         private $taskName;
         private $taskDescription;
         private $projectId;
+        private $taskStatus;
         private $db;
 
         public function __set($key, $value){
@@ -41,6 +42,8 @@
                 $sql = "UPDATE tasks SET task_name = '$this->taskName' WHERE task_id = $this->taskId";
             } elseif($par == 'description'){
                 $sql = "UPDATE tasks SET task_description = '$this->taskDescription' WHERE task_id = $this->taskId";
+            } elseif($par == 'status'){
+                $sql = "UPDATE tasks SET task_status = '$this->taskStatus' WHERE task_id = $this->taskId";
             }
 
             $stmt = $this->db->prepare($sql);

@@ -101,5 +101,28 @@
             header('location: index.php');
 
         }
+
+        // marca a tarefa como "em andamento"
+        if($_GET['action'] == 'moveto'){
+            $id = $_GET['id'];
+            $status = $_GET['status'];
+
+            $db = new Db();
+            $task = new Task();
+
+            $task->__set('db', $db->connect());
+            $task->__set('taskId', $id);
+            $task->__set('taskStatus', $status);
+
+            $task->update('status');
+
+            header('location: index.php');
+
+        }
+
+        //marca a tarefa como concluída
+        if($_GET['action'] == 'markasdone'){
+            // teste
+        } 
     }
 ?>
