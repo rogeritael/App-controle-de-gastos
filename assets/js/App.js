@@ -1,3 +1,8 @@
+addEvent(window, "resize", function(event) {
+    console.log('resized');
+  });
+
+
 //mostra o menu(mobile)
 function showMenu(){
     let menu = document.querySelector('aside.sidebar');

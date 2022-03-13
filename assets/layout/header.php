@@ -51,7 +51,7 @@
                                 <?php if($status == 1){ echo 'current';} ?>
                             ">
                                 <h3><?php echo $project['project_name']; ?></h3>
-                                <p>17 de 24 tarefas</p>
+                                <!-- <p>17 de 24 tarefas</p> -->
                             </li>
                         </a>
                     <?php } ?>
@@ -94,23 +94,9 @@
                     <div class="btn-container">
                         <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
                         <a href="kanban.controller.php?action=deleteProject&id=<?php echo $pId;?>"><i class="fas fa-trash"></i></a>
-                        <input type="button" value="adicionar tarefa">
+                        <a href="task-register.php"><input type="button" value="adicionar tarefa"></a>
                     </div>
                 </div>
-
-                <!-- <div class="task-register">
-                    <form action="">
-                        <div class="input-task">
-                            <label for="task"></label>
-                            <input name="task" type="text" placeholder="Digite a tarefa">
-                        </div>
-
-                        <label for="task-description"></label>
-                        <textarea name="task-description" placeholder="Escreva uma descrição"></textarea>
-                        
-                        <input type="submit" value="Cadastrar">
-                    </form>
-                </div> -->
 
                 <h2 class="text-detail">Quadro</h2>
             </header>
