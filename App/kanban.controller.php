@@ -144,7 +144,6 @@
             $task->delete();
 
             header('location: index.php');
-
         }
 
         // marca a tarefa como "em andamento"

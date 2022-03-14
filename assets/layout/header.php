@@ -77,7 +77,10 @@
             <!-- header -->
             <header class="main-header">
                 <?php
+                $pName = 'Nenhum projeto selecionado';
                     foreach($projArray as $project){
+                        
+
                         if($project['project_status'] == 1){
                             $pName = $project['project_name'];
                             $pId = $project['project_id'];
@@ -89,11 +92,7 @@
                 <div class="project-info">
                     <div class="text-container">
                         <h2><?php
-                            if(!isset($pname)){
-                                echo 'Nenhum projeto selecionado';
-                            }else {
-                                echo $pName;
-                            }
+                            echo $pName;
                             ?>
                         </h2>
                         <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
