@@ -13,6 +13,32 @@
 
     // recupera as tarefas do projeto selecionado
     foreach($projArray as $project){
+
+        //retorna quantas tarefas o projeto contém
+        $id = $project['project_id'];
+        $taskModel = new Task();
+        $taskModel->__set('projectId', $id);
+        $taskModel->__set('db', $db->connect());
+        $taskArray = $taskModel->read();
+
+        //seta o total de tarefas cadastradas
+        $total = count($taskArray);
+        $setTotalTask = new Project();
+        $setTotalTask->__set('project_id', $id);
+        $setTotalTask->__set('db', $db->connect());
+        $setTotalTask->__set('total', $total);
+        $setTotalTask->setTotal();
+
+        $done = 0;
+        foreach($taskArray as $taskUnity){
+            if($taskUnity['task_status'] == 3){
+                $done ++;
+            }
+        }
+
+        $setTotalTask->__set('done', $done); 
+        $setTotalTask->setDone(); 
+
         if($project['project_status'] == 1){
             $task = new Task();
             $task->__set('projectId', $project['project_id']);

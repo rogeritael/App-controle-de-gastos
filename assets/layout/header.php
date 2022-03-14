@@ -51,7 +51,7 @@
                                 <?php if($status == 1){ echo 'current';} ?>
                             ">
                                 <h3><?php echo $project['project_name']; ?></h3>
-                                <!-- <p>17 de 24 tarefas</p> -->
+                                <p><?php echo $project['n_done'] ?> de <?php echo $project['n_total'] ?> tarefas</p>
                             </li>
                         </a>
                     <?php } ?>

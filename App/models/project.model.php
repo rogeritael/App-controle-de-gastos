@@ -5,6 +5,8 @@
         private $project_name;
         private $user_id;
         private $db;
+        private $total;
+        private $done;
 
         public function __set($attr, $value){
             $this->$attr = $value;
@@ -12,7 +14,7 @@
 
         //recupera os projetos cadastrados
         public function read(){
-            $sql = "SELECT project_id, project_name, project_status FROM projects WHERE fk_user_id = 1";
+            $sql = "SELECT project_id, project_name, project_status, n_total, n_done FROM projects WHERE fk_user_id = 1";
             
             $stmt = $this->db->prepare($sql);
             $stmt->execute();
@@ -55,6 +57,21 @@
             $stmt = $this->db->prepare($sql);
             $stmt->bindValue(':pname', $this->project_name);
             $stmt->bindValue(':pid', $this->project_id);
+            $stmt->execute();
+        }
+
+        public function setTotal(){
+            $sql = 'UPDATE projects set n_total = :total where project_id = :id';
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':total', $this->total);
+            $stmt->bindValue(':id', $this->project_id);
+            $stmt->execute();
+        }
+        public function setDone(){
+            $sql = 'UPDATE projects set n_done = :done where project_id = :id';
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':done', $this->done);
+            $stmt->bindValue(':id', $this->project_id);
             $stmt->execute();
         }
     }
