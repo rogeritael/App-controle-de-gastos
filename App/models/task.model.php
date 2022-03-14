@@ -12,12 +12,13 @@
         }
 
         public function create(){
-            $sql = "INSERT INTO tasks(task_name, task_description, fk_project_id) VALUES(:taskName, :taskDescription, :projectId)";
+            $sql = "INSERT INTO tasks(task_name, task_description, fk_project_id, task_status) VALUES(:taskName, :taskDescription, :projectId, :taskStatus)";
             
             $stmt = $this->db->prepare($sql);
             $stmt->bindValue(':taskName', $this->taskName);
             $stmt->bindValue(':taskDescription', $this->taskDescription);
             $stmt->bindValue(':projectId', $this->projectId);
+            $stmt->bindValue(':taskStatus', $this->taskStatus);
             $stmt->execute();
         }
 

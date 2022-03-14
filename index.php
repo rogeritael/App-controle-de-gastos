@@ -18,10 +18,8 @@
             ?>
                 <div class="card-item">
                     <h2><?php echo $task['task_name'] ?></h2>
-                    <p>A expressão Lorem ipsum em design gráfico e 
-                        editoração é um texto padrão em latim utilizado na 
-                        produção gráfica para preencher os espaços de texto 
-                        em publicações para
+                    <p>
+                        <?php echo $task['task_description'] ?>
                     </p>
                     <div class="card-controls">
                         <i class="fas fa-edit"></i>
@@ -53,10 +51,8 @@
                 ?>
                     <div class="card-item">
                         <h2>Criar header</h2>
-                        <p>A expressão Lorem ipsum em design gráfico e 
-                            editoração é um texto padrão em latim utilizado na 
-                            produção gráfica para preencher os espaços de texto 
-                            em publicações para
+                        <p>
+                            <?php echo $task['task_description'] ?>
                         </p>
                         <div class="card-controls">
                         <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=3"><i class="fas fa-check"></i></a> 
@@ -85,10 +81,8 @@
             ?>
             <div class="card-item">
                 <h2><?php echo $task['task_name']?></h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
+                <p>
+                    <?php echo $task['task_description'] ?>
                 </p>
                 <div class="card-controls">
                     <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>

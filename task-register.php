@@ -10,10 +10,10 @@
                 <input name="task" type="text" placeholder="Digite a tarefa">
             </div>
 
-            <input type="hidden" name="id" value="<?php $pId ?>">
+            <input type="hidden" name="id" value="<?php echo $pId ?>">
 
             <label for="task-description"></label>
-            <textarea name="task-description" placeholder="Escreva uma descrição"></textarea>
+            <textarea name="taskDescription" placeholder="Escreva uma descrição"></textarea>
             
             <input type="submit" value="Cadastrar">
         </form>

@@ -162,5 +162,21 @@
 
             header('location: index.php');
         }
+
+        //cadastra nova tarefa no db
+        if($_GET['action'] == 'task-register'){
+            $db = new Db();
+            $task = new Task();
+
+            $task->__set('db', $db->connect());
+            $task->__set('taskName', $_POST['task']);
+            $task->__set('taskDescription', $_POST['taskDescription']);
+            $task->__set('projectId', $_POST['id']);
+            $task->__set('taskStatus', 1);
+
+            $task->create();
+            header('location: index.php');
+            // echo $_POST['task'],$_POST['taskDescription'],$_POST['id']; 
+        }
     }
 ?>
