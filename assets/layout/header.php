@@ -88,7 +88,14 @@
                 <i class="fas fa-bars" onclick="showMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
-                        <h2><?php echo $pName?></h2>
+                        <h2><?php
+                            if(!isset($pname)){
+                                echo 'Nenhum projeto selecionado';
+                            }else {
+                                echo $pName;
+                            }
+                            ?>
+                        </h2>
                         <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
                     </div>
                     <div class="btn-container">

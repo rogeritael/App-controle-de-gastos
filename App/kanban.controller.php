@@ -52,13 +52,15 @@
     $count2 = 0;
     $count3 = 0;
     
-    foreach($tasks as $taskCount){
-        if($taskCount['task_status'] == 3){
-            $count3++;
-        }elseif($taskCount['task_status'] == 2){
-            $count2++;
-        }elseif($taskCount['task_status'] == 1){
-            $count1++;
+    if(isset($tasks)){
+        foreach($tasks as $taskCount){
+            if($taskCount['task_status'] == 3){
+                $count3++;
+            }elseif($taskCount['task_status'] == 2){
+                $count2++;
+            }elseif($taskCount['task_status'] == 1){
+                $count1++;
+            }
         }
     }
     $countTotal = $count1 + $count2 + $count3;
@@ -161,10 +163,5 @@
 
             header('location: index.php');
         }
-
-        //marca a tarefa como concluída
-        if($_GET['action'] == 'markasdone'){
-            // teste
-        } 
     }
 ?>

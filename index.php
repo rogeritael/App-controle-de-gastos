@@ -3,7 +3,7 @@
 <section class="cards-container">
 
     <!-- card fazer -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 1){
     ?>
         <div class="card">
@@ -34,12 +34,12 @@
                 
             </div>
         </div>
-    <?php break; } } ?>
+    <?php break; } } }?>
 
     <!-- /card fazer-->
 
     <!-- card em andamento -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 2){
     ?>
         <div class="card">
@@ -66,12 +66,12 @@
                 <?php } } ?>
             </div>
         </div>
-    <?php break; } } ?>
+    <?php break; } } } ?>
     <!-- /card em andamento-->
 
 
     <!-- card conluído -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 3){
     ?>
     <div class="card">
@@ -97,7 +97,7 @@
             <?php } } ?> 
         </div>
     </div>
-    <?php break; } } ?>
+    <?php break; } } } ?>
     <!-- /card concluído -->
 
 </section>
