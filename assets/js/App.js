@@ -1,3 +1,9 @@
+//recarrega a página ao redimensionar a tela
+window.addEventListener('resize', () =>{
+    if(window.screen.width > 890){
+        location.reload();
+    }
+});
 
 //mostra o menu(mobile)
 function showMenu(){
