@@ -94,16 +94,22 @@
                             echo $pName;
                             ?>
                         </h2>
+                        <?php if(isset($pId)) { ?>
                         <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
+                        <?php } ?>
                     </div>
+                    <?php if(isset($pId)){ ?>
                     <div class="btn-container">
                         <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
                         <a href="kanban.controller.php?action=deleteProject&id=<?php echo $pId;?>"><i class="fas fa-trash"></i></a>
+                        
+                        
                         <a href="task-register.php"><input type="button" value="adicionar tarefa"></a>
                     </div>
                 </div>
 
                 <h2 class="text-detail">Quadro</h2>
+                <?php } ?>
             </header>
             <!-- /header -->
 

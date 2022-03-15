@@ -176,12 +176,10 @@
 
             $task->create();
             header('location: index.php');
-            // echo $_POST['task'],$_POST['taskDescription'],$_POST['id']; 
         }
 
         //edita a tarefa
         if($_GET['action'] == 'task-edit'){
-            // print_r($_POST);
             $db = new Db;
             $task = new Task();
 
