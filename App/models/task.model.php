@@ -39,16 +39,20 @@
         }
 
         public function update($par){
-            if($par == 'name'){
-                $sql = "UPDATE tasks SET task_name = '$this->taskName' WHERE task_id = $this->taskId";
-            } elseif($par == 'description'){
-                $sql = "UPDATE tasks SET task_description = '$this->taskDescription' WHERE task_id = $this->taskId";
+            if($par == 'task'){
+                $sql = "UPDATE tasks SET task_name = :task, task_description = :descr WHERE task_id = $this->taskId";
+            
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindValue(':task', $this->taskName);
+                $stmt->bindValue(':descr', $this->taskDescription);
+                $stmt->execute();
+            
             } elseif($par == 'status'){
                 $sql = "UPDATE tasks SET task_status = '$this->taskStatus' WHERE task_id = $this->taskId";
-            }
 
-            $stmt = $this->db->prepare($sql);
-            $stmt->execute();
+                $stmt = $this->db->prepare($sql);
+                $stmt->execute();
+            }
         }
     }
 ?>

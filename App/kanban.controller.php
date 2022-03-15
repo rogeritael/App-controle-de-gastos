@@ -185,7 +185,13 @@
             $db = new Db;
             $task = new Task();
 
-            
+            $task->__set('db', $db->connect());
+            $task->__set('taskId', $_POST['id']);
+            $task->__set('taskName', $_POST['task']);
+            $task->__set('taskDescription', $_POST['description']);
+
+            $task->update('task');
+            header('location: index.php');
         }
     }
 ?>
