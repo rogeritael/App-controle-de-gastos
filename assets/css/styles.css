@@ -344,7 +344,34 @@ div.hidden-menu{
 }
 
 /* formulário de edição de tarefa */
+.taskedit-form {
+    width: 100%;
+}
 
+.taskedit-input, .taskedit-textarea{
+    padding: 5px;
+    border: 1px solid #e6e6e6;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 3px;
+    color: #747474;
+}
+
+.taskedit-input::placeholder, .taskedit-textarea::placeholder{
+    color: #BABABA;
+}
+
+.taskedit-textarea{
+    resize: none;
+    height: 80px;
+}
+
+.taskedit-btn {
+    padding: 5px;
+    color: #fff;
+    background-color: #609DF9;
+    border-radius: 3px;
+}
 
 
 
