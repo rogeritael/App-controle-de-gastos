@@ -1,6 +1,9 @@
 <?php
     require 'kanban.controller.php';
 
+    if(isset($_GET['refresh'])){
+        header('location: index.php');
+    }
 ?>
 
 <html lang="pt-br">
@@ -51,7 +54,7 @@
                                 <?php if($status == 1){ echo 'current';} ?>
                             ">
                                 <h3><?php echo $project['project_name']; ?></h3>
-                                <p>17 de 24 tarefas</p>
+                                <p><?php echo $project['n_done'] ?> de <?php echo $project['n_total'] ?> tarefas</p>
                             </li>
                         </a>
                     <?php } ?>
@@ -77,7 +80,10 @@
             <!-- header -->
             <header class="main-header">
                 <?php
+                $pName = 'Nenhum projeto selecionado';
                     foreach($projArray as $project){
+                        
+
                         if($project['project_status'] == 1){
                             $pName = $project['project_name'];
                             $pId = $project['project_id'];
@@ -88,31 +94,26 @@
                 <i class="fas fa-bars" onclick="showMenu()"></i>
                 <div class="project-info">
                     <div class="text-container">
-                        <h2><?php echo $pName?></h2>
+                        <h2><?php
+                            echo $pName;
+                            ?>
+                        </h2>
+                        <?php if(isset($pId)) { ?>
                         <p><?php echo $count3 ?> de <?php echo $countTotal ?></p>
+                        <?php } ?>
                     </div>
+                    <?php if(isset($pId)){ ?>
                     <div class="btn-container">
                         <i class="fas fa-pen" onclick="editProjectName(<?php echo $pId?>)"></i>
                         <a href="kanban.controller.php?action=deleteProject&id=<?php echo $pId;?>"><i class="fas fa-trash"></i></a>
-                        <input type="button" value="adicionar tarefa">
+                        
+                        
+                        <a href="task-register.php"><input type="button" value="adicionar tarefa"></a>
                     </div>
                 </div>
 
-                <!-- <div class="task-register">
-                    <form action="">
-                        <div class="input-task">
-                            <label for="task"></label>
-                            <input name="task" type="text" placeholder="Digite a tarefa">
-                        </div>
-
-                        <label for="task-description"></label>
-                        <textarea name="task-description" placeholder="Escreva uma descrição"></textarea>
-                        
-                        <input type="submit" value="Cadastrar">
-                    </form>
-                </div> -->
-
                 <h2 class="text-detail">Quadro</h2>
+                <?php } ?>
             </header>
             <!-- /header -->
 

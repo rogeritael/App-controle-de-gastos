@@ -3,7 +3,7 @@
 <section class="cards-container">
 
     <!-- card fazer -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 1){
     ?>
         <div class="card">
@@ -16,15 +16,13 @@
             <?php foreach($tasks as $task){ 
                 if($task['task_status'] == 1){
             ?>
-                <div class="card-item">
+                <div class="card-item id<?php echo $task['task_id'] ?>">
                     <h2><?php echo $task['task_name'] ?></h2>
-                    <p>A expressão Lorem ipsum em design gráfico e 
-                        editoração é um texto padrão em latim utilizado na 
-                        produção gráfica para preencher os espaços de texto 
-                        em publicações para
+                    <p>
+                        <?php echo $task['task_description'] ?>
                     </p>
                     <div class="card-controls">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit" onclick="taskEdit(<?php echo $task['task_id'] ?>)"></i>
                         <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>                    
                         <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=2"><i class="fas fa-chevron-right"></i></a>                    
                         
@@ -34,12 +32,12 @@
                 
             </div>
         </div>
-    <?php break; } } ?>
+    <?php break; } } }?>
 
     <!-- /card fazer-->
 
     <!-- card em andamento -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 2){
     ?>
         <div class="card">
@@ -52,11 +50,9 @@
                     if($task['task_status'] == 2){
                 ?>
                     <div class="card-item">
-                        <h2>Criar header</h2>
-                        <p>A expressão Lorem ipsum em design gráfico e 
-                            editoração é um texto padrão em latim utilizado na 
-                            produção gráfica para preencher os espaços de texto 
-                            em publicações para
+                        <h2><?php echo $task['task_name'] ?></h2>
+                        <p>
+                            <?php echo $task['task_description'] ?>
                         </p>
                         <div class="card-controls">
                         <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=3"><i class="fas fa-check"></i></a> 
@@ -66,12 +62,12 @@
                 <?php } } ?>
             </div>
         </div>
-    <?php break; } } ?>
+    <?php break; } } } ?>
     <!-- /card em andamento-->
 
 
     <!-- card conluído -->
-    <?php foreach($tasks as $taskVerify){
+    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 3){
     ?>
     <div class="card">
@@ -85,10 +81,8 @@
             ?>
             <div class="card-item">
                 <h2><?php echo $task['task_name']?></h2>
-                <p>A expressão Lorem ipsum em design gráfico e 
-                    editoração é um texto padrão em latim utilizado na 
-                    produção gráfica para preencher os espaços de texto 
-                    em publicações para
+                <p>
+                    <?php echo $task['task_description'] ?>
                 </p>
                 <div class="card-controls">
                     <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>
@@ -97,7 +91,7 @@
             <?php } } ?> 
         </div>
     </div>
-    <?php break; } } ?>
+    <?php break; } } } ?>
     <!-- /card concluído -->
 
 </section>

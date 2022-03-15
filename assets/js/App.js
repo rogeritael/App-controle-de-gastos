@@ -1,3 +1,10 @@
+//recarrega a página ao redimensionar a tela
+window.addEventListener('resize', () =>{
+    if(window.screen.width > 890){
+        location.reload();
+    }
+});
+
 //mostra o menu(mobile)
 function showMenu(){
     let menu = document.querySelector('aside.sidebar');
@@ -58,4 +65,50 @@ function editProjectName(id){
 
     title.innerHTML = '';
     title.insertBefore(form, title.children[0]);
+}
+
+//edita a tarefa
+function taskEdit(id){
+    let cardItem = document.querySelector('.id'+id);
+    let name = document.querySelector('.id'+id +' h2').innerHTML
+    let descr = document.querySelector('.id'+id +' p').innerHTML
+    descr = descr.trim();
+    cardItem.innerHTML = '';
+
+    let form = document.createElement('form');
+    form.action = 'kanban.controller.php?action=task-edit';
+    form.method = 'post';
+    form.className = 'taskedit-form';
+
+    let inputName = document.createElement('input');
+    inputName.type = 'text';
+    inputName.className = 'taskedit-input';
+    inputName.placeholder = 'Edite o nome da tarefa';
+    inputName.value = name;
+    inputName.name = 'task';
+
+    let textarea = document.createElement('textarea');
+    textarea.className = 'taskedit-textarea';
+    textarea.placeholder = 'Edite a descrição da tarefa';
+    textarea.value = descr;
+    textarea.name = 'description';
+
+    let ocult = document.createElement('input')
+    ocult.type = 'text';
+    ocult.name = 'id';
+    ocult.value = id;
+    ocult.style.display = 'none';
+
+
+    let btn = document.createElement('input');
+    btn.type = 'submit';
+    btn.value = 'editar';
+    btn.className = 'taskedit-btn';
+
+    form.appendChild(inputName);
+    form.appendChild(textarea);
+    form.appendChild(ocult);
+    form.appendChild(btn);
+
+    cardItem.insertBefore(form, cardItem[0]);
 }

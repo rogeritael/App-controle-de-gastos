@@ -13,6 +13,32 @@
 
     // recupera as tarefas do projeto selecionado
     foreach($projArray as $project){
+
+        //retorna quantas tarefas o projeto contém
+        $id = $project['project_id'];
+        $taskModel = new Task();
+        $taskModel->__set('projectId', $id);
+        $taskModel->__set('db', $db->connect());
+        $taskArray = $taskModel->read();
+
+        //seta o total de tarefas cadastradas
+        $total = count($taskArray);
+        $setTotalTask = new Project();
+        $setTotalTask->__set('project_id', $id);
+        $setTotalTask->__set('db', $db->connect());
+        $setTotalTask->__set('total', $total);
+        $setTotalTask->setTotal();
+
+        $done = 0;
+        foreach($taskArray as $taskUnity){
+            if($taskUnity['task_status'] == 3){
+                $done ++;
+            }
+        }
+
+        $setTotalTask->__set('done', $done); 
+        $setTotalTask->setDone(); 
+
         if($project['project_status'] == 1){
             $task = new Task();
             $task->__set('projectId', $project['project_id']);
@@ -26,13 +52,15 @@
     $count2 = 0;
     $count3 = 0;
     
-    foreach($tasks as $taskCount){
-        if($taskCount['task_status'] == 3){
-            $count3++;
-        }elseif($taskCount['task_status'] == 2){
-            $count2++;
-        }elseif($taskCount['task_status'] == 1){
-            $count1++;
+    if(isset($tasks)){
+        foreach($tasks as $taskCount){
+            if($taskCount['task_status'] == 3){
+                $count3++;
+            }elseif($taskCount['task_status'] == 2){
+                $count2++;
+            }elseif($taskCount['task_status'] == 1){
+                $count1++;
+            }
         }
     }
     $countTotal = $count1 + $count2 + $count3;
@@ -115,8 +143,7 @@
 
             $task->delete();
 
-            header('location: index.php');
-
+            header('location: index.php?refresh');
         }
 
         // marca a tarefa como "em andamento"
@@ -133,12 +160,36 @@
 
             $task->update('status');
 
-            header('location: index.php');
+            header('location: index.php?refresh');
         }
 
-        //marca a tarefa como concluída
-        if($_GET['action'] == 'markasdone'){
-            // teste
-        } 
+        //cadastra nova tarefa no db
+        if($_GET['action'] == 'task-register'){
+            $db = new Db();
+            $task = new Task();
+
+            $task->__set('db', $db->connect());
+            $task->__set('taskName', $_POST['task']);
+            $task->__set('taskDescription', $_POST['taskDescription']);
+            $task->__set('projectId', $_POST['id']);
+            $task->__set('taskStatus', 1);
+
+            $task->create();
+            header('location: index.php?refresh');
+        }
+
+        //edita a tarefa
+        if($_GET['action'] == 'task-edit'){
+            $db = new Db;
+            $task = new Task();
+
+            $task->__set('db', $db->connect());
+            $task->__set('taskId', $_POST['id']);
+            $task->__set('taskName', $_POST['task']);
+            $task->__set('taskDescription', $_POST['description']);
+
+            $task->update('task');
+            header('location: index.php');
+        }
     }
 ?>
