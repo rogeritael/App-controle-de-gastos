@@ -143,7 +143,7 @@
 
             $task->delete();
 
-            header('location: index.php');
+            header('location: index.php?refresh');
         }
 
         // marca a tarefa como "em andamento"
@@ -160,7 +160,7 @@
 
             $task->update('status');
 
-            header('location: index.php');
+            header('location: index.php?refresh');
         }
 
         //cadastra nova tarefa no db
@@ -175,7 +175,7 @@
             $task->__set('taskStatus', 1);
 
             $task->create();
-            header('location: index.php');
+            header('location: index.php?refresh');
         }
 
         //edita a tarefa

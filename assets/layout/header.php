@@ -1,5 +1,9 @@
 <?php
     require 'kanban.controller.php';
+
+    if(isset($_GET['refresh'])){
+        header('location: index.php');
+    }
 ?>
 
 <html lang="pt-br">
