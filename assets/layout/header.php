@@ -1,6 +1,5 @@
 <?php
     require 'kanban.controller.php';
-
 ?>
 
 <html lang="pt-br">

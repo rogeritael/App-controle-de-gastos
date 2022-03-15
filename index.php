@@ -16,13 +16,13 @@
             <?php foreach($tasks as $task){ 
                 if($task['task_status'] == 1){
             ?>
-                <div class="card-item">
+                <div class="card-item id<?php echo $task['task_id'] ?>">
                     <h2><?php echo $task['task_name'] ?></h2>
                     <p>
                         <?php echo $task['task_description'] ?>
                     </p>
                     <div class="card-controls">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit" onclick="taskEdit(<?php echo $task['task_id'] ?>)"></i>
                         <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>                    
                         <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=2"><i class="fas fa-chevron-right"></i></a>                    
                         
@@ -50,7 +50,7 @@
                     if($task['task_status'] == 2){
                 ?>
                     <div class="card-item">
-                        <h2>Criar header</h2>
+                        <h2><?php echo $task['task_name'] ?></h2>
                         <p>
                             <?php echo $task['task_description'] ?>
                         </p>

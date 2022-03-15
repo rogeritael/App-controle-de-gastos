@@ -1,7 +1,3 @@
-addEvent(window, "resize", function(event) {
-    console.log('resized');
-  });
-
 
 //mostra o menu(mobile)
 function showMenu(){
@@ -63,4 +59,29 @@ function editProjectName(id){
 
     title.innerHTML = '';
     title.insertBefore(form, title.children[0]);
+}
+
+//edita a tarefa
+function taskEdit(id){
+    let cardItem = document.querySelector('.id'+id);
+    cardItem.innerHTML = '';
+
+    let form = document.createElement('form');
+    form.action = 'kanban.controller.php?action=task-edit';
+    form.method = 'post';
+
+    let inputName = document.createElement('input');
+    inputName.type = 'text';
+
+    let textarea = document.createElement('textarea');
+
+    let btn = document.createElement('input');
+    btn.type = 'submit';
+    btn.value = 'editar';
+
+    form.appendChild(inputName);
+    form.appendChild(textarea);
+    form.appendChild(btn);
+
+    cardItem.insertBefore(form, cardItem[0]);
 }
