@@ -388,13 +388,14 @@ section.main-login {
 .container-login{
     background-color: #fff;
     width: 350px;
-    height: 350px;
+    min-height: 350px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     padding: 15px;
 }
-.container-login input[type="email"], .container-login input[type="password"]{
+
+.container-login input[type="email"], .container-login input[type="password"], .container-login input[type="text"]{
     padding-left: 10px;
 }
 
@@ -433,6 +434,7 @@ section.main-login {
     color: #609DF9;
     margin-bottom: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
 .container-login form{
@@ -440,6 +442,18 @@ section.main-login {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    /* text-align: center; */
+}
+
+/* registro */
+.container-login span{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container-login span label{
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /*=============== 
