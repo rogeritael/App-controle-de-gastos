@@ -373,7 +373,74 @@ div.hidden-menu{
     border-radius: 3px;
 }
 
+/*=============== 
+ Login
+===============*/
+section.main-login {
+    background-color: #609DF9;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.container-login{
+    background-color: #fff;
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+.container-login input[type="email"], .container-login input[type="password"]{
+    padding-left: 10px;
+}
+
+.container-login input{
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    margin: 10px 0;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.container-login input::placeholder{
+    color: #BABABA;
+}
+
+.container-login input[type="submit"]{
+    color: #fff;
+    background-color: #609DF9;
+    cursor: pointer;
+    border: none;
+}
+
+.container-p{
+    display: flex;
+    margin-top: 60px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.container-p p{
+    font-size: 15px;
+}
+
+.container-login p.kanban-title{
+    font-size: 35px;
+    color: #609DF9;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.container-login form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
 /*=============== 
  Mobile
