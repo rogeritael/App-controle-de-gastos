@@ -13,7 +13,7 @@
 <body>
     <section class="main-login">
         <div class="container-login">
-            <form action="">
+            <form action="kanban.controller.php?action=register" method="post">
                 <p class="kanban-title">Crie sua conta para começar</p>
 
                 <span><label>Nome</label></span>
@@ -28,7 +28,7 @@
                 <input type="submit" value="Cadastrar">
 
                 <div class="container-p">
-                    <a href=""><p>Voltar</p></a>
+                    <a href="index.php"><p>Voltar</p></a>
                 </div>
             </form>
         </div>

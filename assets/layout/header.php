@@ -64,7 +64,7 @@
 
             <!-- sidebar footer -->
             <div class="aside-footer">
-                <a href=""><p>Sair <i class="fas fa-sign-out-alt"></i></p></a>
+                <a href="login.controller.php?action=logout"><p>Sair <i class="fas fa-sign-out-alt"></i></p></a>
             </div>
             <!-- /sidebar footer -->
         </aside>

@@ -1,8 +1,13 @@
 <?php
+    session_start();
     require "App/db/db.php";
     require "App/models/project.model.php";
     require "App/models/task.model.php";
-    // require "db/user.model.php";
+    require "App/models/user.model.php";
+
+    if(!isset($_SESSION['user_id'])){
+        header('location: index.php');
+    }
 
     // recupera os projetos do usuário
     $db = new Db();
@@ -65,7 +70,6 @@
     }
     $countTotal = $count1 + $count2 + $count3;
     // echo $count1, $count2, $count3,  $countTotal;
-
 
 
     if(isset($_GET['action'])){
@@ -191,5 +195,9 @@
             $task->update('task');
             header('location: index.php');
         }
+
+
+
+        
     }
 ?>

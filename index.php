@@ -1,99 +1,28 @@
-<?php require 'assets/layout/header.php'; ?>
-
-<section class="cards-container">
-
-    <!-- card fazer -->
-    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
-        if($taskVerify['task_status'] == 1){
-    ?>
-        <div class="card">
-            <div class="card-header">
-                <p><i class="fas fa-thumbtack"></i>Fazer </p>
-                <p><?php echo $count1 ?> / <?php echo $countTotal ?></p>
-            </div>
-            <div class="card-body">
-
-            <?php foreach($tasks as $task){ 
-                if($task['task_status'] == 1){
-            ?>
-                <div class="card-item id<?php echo $task['task_id'] ?>">
-                    <h2><?php echo $task['task_name'] ?></h2>
-                    <p>
-                        <?php echo $task['task_description'] ?>
-                    </p>
-                    <div class="card-controls">
-                        <i class="fas fa-edit" onclick="taskEdit(<?php echo $task['task_id'] ?>)"></i>
-                        <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>                    
-                        <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=2"><i class="fas fa-chevron-right"></i></a>                    
-                        
-                    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Kanban - Login</title>
+</head>
+<body>
+    <section class="main-login">
+        <div class="container-login">
+            <form action="login.controller.php?action=login" method="post">
+                <p class="kanban-title">Kanban</p>
+                <input type="email" name="email" placeholder="Digite o seu email">
+                <input type="password" name="pass" placeholder="Digite a sua senha">
+                <input type="submit" value="Entrar">
+                <div class="container-p">
+                    <a href="register.php"><p>Cadastrar</p></a>
                 </div>
-            <?php } } ?>
-                
-            </div>
+            </form>
         </div>
-    <?php break; } } }?>
-
-    <!-- /card fazer-->
-
-    <!-- card em andamento -->
-    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
-        if($taskVerify['task_status'] == 2){
-    ?>
-        <div class="card">
-            <div class="card-header">
-                <p><i class="fas fa-clock"></i></i>Em andamento </p>
-                <p><?php echo $count2 ?> / <?php echo $countTotal ?></p>
-            </div>
-            <div class="card-body">
-                <?php foreach($tasks as $task){ 
-                    if($task['task_status'] == 2){
-                ?>
-                    <div class="card-item">
-                        <h2><?php echo $task['task_name'] ?></h2>
-                        <p>
-                            <?php echo $task['task_description'] ?>
-                        </p>
-                        <div class="card-controls">
-                        <a href="kanban.controller.php?action=moveto&id=<?php echo $task['task_id']; ?>&status=3"><i class="fas fa-check"></i></a> 
-                            
-                        </div>
-                    </div>
-                <?php } } ?>
-            </div>
-        </div>
-    <?php break; } } } ?>
-    <!-- /card em andamento-->
-
-
-    <!-- card conluído -->
-    <?php if(isset($tasks)){foreach($tasks as $taskVerify){
-        if($taskVerify['task_status'] == 3){
-    ?>
-    <div class="card">
-        <div class="card-header">
-            <p><i class="fas fa-check-circle"></i>Concluído </p>
-            <p><?php echo $count3 ?> / <?php echo $countTotal ?></p>
-        </div>
-        <div class="card-body">
-            <?php foreach($tasks as $task){ 
-                if($task['task_status'] == 3){
-            ?>
-            <div class="card-item">
-                <h2><?php echo $task['task_name']?></h2>
-                <p>
-                    <?php echo $task['task_description'] ?>
-                </p>
-                <div class="card-controls">
-                    <a href="kanban.controller.php?action=deletetask&id=<?php echo $task['task_id']; ?>"><i class="fas fa-trash-alt"></i></a>
-                </div>
-            </div>
-            <?php } } ?> 
-        </div>
-    </div>
-    <?php break; } } } ?>
-    <!-- /card concluído -->
-
-</section>
-
-<?php require 'assets/layout/footer.php'; ?>
+    </section>
+</body>
+</html>
