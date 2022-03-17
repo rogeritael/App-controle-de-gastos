@@ -79,5 +79,14 @@
             $stmt->bindValue(':id', $this->project_id);
             $stmt->execute();
         }
+
+        // pega o id do projeto
+        public function getId(){
+            $sql = "SELECT project_id FROM projects WHERE fk_user_id = :userId";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':userId', $this->user_id);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
     }
 ?>
