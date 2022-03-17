@@ -13,7 +13,7 @@
 <body>
     <section class="main-login">
         <div class="container-login">
-            <form action="kanban.controller.php?action=register" method="post">
+            <form action="login.controller.php?action=register" method="post">
                 <p class="kanban-title">Crie sua conta para começar</p>
 
                 <span><label>Nome</label></span>

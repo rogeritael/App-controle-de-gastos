@@ -23,5 +23,15 @@
         public function logOut(){
             session_destroy();
         }
+
+        public function register(){
+            $sql = "INSERT INTO users(user_name, user_email, user_pass) VALUES(:name, :email, md5(:pass))";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':name', $this->name);
+            $stmt->bindValue(':email', $this->email);
+            $stmt->bindValue(':pass', $this->pass);
+
+            $stmt->execute();
+        }
     }
 ?>

@@ -25,7 +25,18 @@
         }elseif($_GET['action'] == 'logout'){
             $user = new User;
             $user->logOut();
-            header('location.index.php');
+            header('location: index.php');
+        }elseif($_GET['action'] == 'register'){
+            $db = new Db;
+            $user = new User;
+
+            $user->__set('db', $db->connect());
+            $user->__set('name', $_POST['name']);
+            $user->__set('pass', $_POST['pass']);
+            $user->__set('email', $_POST['email']);
+
+            $user->register();
+            header('location: index.php');
         }
     }
 ?>
