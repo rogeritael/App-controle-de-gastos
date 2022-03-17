@@ -2,7 +2,7 @@
     require 'kanban.controller.php';
 
     if(isset($_GET['refresh'])){
-        header('location: index.php');
+        header('location: painel.php');
     }
 ?>
 
@@ -44,6 +44,7 @@
 
             <!-- sidebar body -->
             <div class="aside-body">
+                <p>Olá, <?php echo $_SESSION['user_name'] ?></p>
                 <ul>
                     <?php
                         foreach($projArray as $project){

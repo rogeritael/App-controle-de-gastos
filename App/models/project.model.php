@@ -14,9 +14,9 @@
 
         //recupera os projetos cadastrados
         public function read(){
-            $sql = "SELECT project_id, project_name, project_status, n_total, n_done FROM projects WHERE fk_user_id = 1";
-            
+            $sql = "SELECT project_id, project_name, project_status, n_total, n_done FROM projects WHERE fk_user_id = :user";
             $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':user', $this->user_id);
             $stmt->execute();
 
             return $stmt->fetchAll();

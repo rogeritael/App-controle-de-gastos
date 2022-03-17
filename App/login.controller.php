@@ -16,6 +16,7 @@
             $userInfo = $user->login();
             if(count($userInfo) == 1){
                 $_SESSION['user_id'] = $userInfo[0]['user_id'];
+                $_SESSION['user_name'] = $userInfo[0]['user_name'];
                 // echo $_SESSION['user_id'];
 
                 header('location: painel.php');

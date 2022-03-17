@@ -14,6 +14,7 @@
     $projects = new Project();
 
     $projects->__set('db', $db->connect());
+    $projects->__set('user_id', $_SESSION['user_id']);
     $projArray = $projects->read();
 
     // recupera as tarefas do projeto selecionado
@@ -47,6 +48,7 @@
         if($project['project_status'] == 1){
             $task = new Task();
             $task->__set('projectId', $project['project_id']);
+            $task->__set('user_id', $_SESSION['user_id']);
             $task->__set('db', $db->connect());
             $tasks = $task->read();
         }
@@ -80,12 +82,12 @@
             $project = new Project();
 
             $project->__set('project_id', $id);
-            $project->__set('user_id', 1);
+            $project->__set('user_id', $_SESSION['user_id']);
             $project->__set('db', $db->connect());
 
             $project->selectProject();
 
-            header('location: index.php');
+            header('location: painel.php');
         }
 
         //cria um novo projeto
@@ -95,11 +97,11 @@
 
             $project = new Project();
             $project->__set('db', $db->connect());
-            $project->__set('user_id', 1);
+            $project->__set('user_id', $_SESSION['user_id']);
             $project->__set('project_name', $projectName);
 
             $project->newProject();
-            header('location: index.php');
+            header('location: painel.php');
         }
 
         //exclui um projeto
@@ -111,11 +113,11 @@
 
             $project->__set('db', $db->connect());
             $project->__set('project_id', $id);
-            $project->__set('user_id', 1);
+            $project->__set('user_id', $_SESSION['user_id']);
             
             $project->delete();
             
-            header('location: index.php');
+            header('location: painel.php');
         }
 
         //edita o nome do projeto
@@ -126,13 +128,13 @@
             $project = new Project();
 
             $project->__set('db', $db->connect());
-            $project->__set('user_id', 1);
+            $project->__set('user_id', $_SESSION['user_id']);
             $project->__set('project_name', $_POST['name']);
             $project->__set('project_id', $id);
 
             $project->editName();
 
-            header('location: index.php');
+            header('location: painel.php');
         }
 
         //deleta a tarefa
@@ -147,7 +149,7 @@
 
             $task->delete();
 
-            header('location: index.php?refresh');
+            header('location: painel.php?refresh');
         }
 
         // marca a tarefa como "em andamento"
@@ -164,7 +166,7 @@
 
             $task->update('status');
 
-            header('location: index.php?refresh');
+            header('location: painel.php?refresh');
         }
 
         //cadastra nova tarefa no db
@@ -179,7 +181,7 @@
             $task->__set('taskStatus', 1);
 
             $task->create();
-            header('location: index.php?refresh');
+            header('location: painel.php?refresh');
         }
 
         //edita a tarefa
@@ -193,7 +195,7 @@
             $task->__set('taskDescription', $_POST['description']);
 
             $task->update('task');
-            header('location: index.php');
+            header('location: painel.php');
         }
 
 
