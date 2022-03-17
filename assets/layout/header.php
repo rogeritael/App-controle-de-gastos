@@ -44,7 +44,7 @@
 
             <!-- sidebar body -->
             <div class="aside-body">
-                <p>Olá, <?php echo $_SESSION['user_name'] ?></p>
+                <p class="user-name">Olá, <?php echo $_SESSION['user_name'] ?></p>
                 <ul>
                     <?php
                         foreach($projArray as $project){

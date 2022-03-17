@@ -44,6 +44,11 @@
 
         //deleta um projeto
         public function delete(){
+            $sqlTask = "DELETE FROM tasks WHERE fk_project_id = :pId";
+            $stmt = $this->db->prepare($sqlTask);
+            $stmt->bindValue(':pId', $this->project_id);
+            $stmt->execute();
+
             $sql = "DELETE FROM projects WHERE project_id = :id AND fk_user_id = :user";
             $stmt = $this->db->prepare($sql);
             $stmt->bindValue(':id', $this->project_id);
