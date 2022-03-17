@@ -14,9 +14,9 @@
 
         //recupera os projetos cadastrados
         public function read(){
-            $sql = "SELECT project_id, project_name, project_status, n_total, n_done FROM projects WHERE fk_user_id = 1";
-            
+            $sql = "SELECT project_id, project_name, project_status, n_total, n_done FROM projects WHERE fk_user_id = :user";
             $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':user', $this->user_id);
             $stmt->execute();
 
             return $stmt->fetchAll();
@@ -44,6 +44,11 @@
 
         //deleta um projeto
         public function delete(){
+            $sqlTask = "DELETE FROM tasks WHERE fk_project_id = :pId";
+            $stmt = $this->db->prepare($sqlTask);
+            $stmt->bindValue(':pId', $this->project_id);
+            $stmt->execute();
+
             $sql = "DELETE FROM projects WHERE project_id = :id AND fk_user_id = :user";
             $stmt = $this->db->prepare($sql);
             $stmt->bindValue(':id', $this->project_id);
