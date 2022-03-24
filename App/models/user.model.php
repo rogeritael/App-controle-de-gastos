@@ -33,5 +33,13 @@
 
             $stmt->execute();
         }
+
+        public function getByEmail(){
+            $sql = "SELECT user_id FROM users WHERE user_email = :email";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':email', $this->email);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
     }
 ?>
